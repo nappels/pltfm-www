@@ -1,0 +1,9 @@
+doctype html
+html(lang='#{ site.language }')
+!= partial('_partials/head')
+
+body
+  .container-fluid
+    != yield
+
+    != partial('_partials/footer')

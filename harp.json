@@ -1,0 +1,14 @@
+{
+    "globals": {
+        "site": {
+            "url": "",
+            "title": "PLTFM",
+            "description": "",
+            "keywords": "",
+            "language": "en",
+            "author": ""
+        },
+        "google_analytics": "",
+        "intercom": ""
+    }
+}
