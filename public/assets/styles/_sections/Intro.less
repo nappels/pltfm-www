@@ -36,7 +36,12 @@
   }
 
   .phones {
-    img{
+    background-image: url('../images/PLTRFM_TwoPhones.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    img {
+      opacity: 0;
       width: 100%;
     }
   }
@@ -64,6 +69,14 @@
   }
 }
 
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  #Intro {
+    .phones {
+      background-image: url('../images/PLTRFM_TwoPhones@2x.png');
+    }
+  }
+}
+
 @media screen and (min-width: 768px) {
   #Intro {
     #Logo {
@@ -75,6 +88,7 @@
 
     .intro {
       flex-direction: row-reverse;
+      min-height: 700px;
       .content {
         margin: 0;
         position: relative;
