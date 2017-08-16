@@ -27,7 +27,7 @@ var PLTRFM = {
 
   Sliders: {
     init: function () {
-       Swipe(PLTRFM.Phones.swipeEl, PLTRFM.Sliders.phones.options);
+       Swipe(PLTRFM.Phones.swipeEl, PLTRFM.Sliders.options);
     },
     options: {
       startSlide: 0,
