@@ -1,0 +1,55 @@
+#Functionlities {
+  margin: 4em 0;
+  .bigPhonePic {
+    display: none;
+  }
+  .functionality {
+    text-align: center;
+    .icon {
+      display: flex;
+      justify-content: center;
+      padding: 1em 0;
+      .iconContainer {
+        background: white;
+        width: 95px;
+        height: 95px;
+        box-shadow: 0 8px 14px rgba(0, 0, 0, 0.16);
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .title {
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1.87px;
+    }
+    .text {
+      color: @light-gray;
+      font-size: 18px;
+      line-height: 30px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #Functionlities {
+    .bigPhonePic {
+      display: block;
+      text-align: center;
+      img {
+        display: none;
+        &.active {
+          display: block;
+        }
+      }
+    }
+    .functionality {
+      text-align: left;
+      .phonePic{
+        display: none;
+      }
+    }
+  }
+}
