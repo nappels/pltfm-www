@@ -23,12 +23,15 @@ all:
 	@echo "    install      Install Bower dependencies of this project"
 	@echo "    clean        Remove installed Bower dependecies"
 	@echo "    chmod        Change files & directory permissions to 750 & 640"
-	@echo "    harp         Install NodeJS, Bower and Harp (Ubuntu/Debian)"
+	@echo "    harp         Install NodeJS, Bower, Gulp and Harp (Ubuntu/Debian)"
 	@echo
 	@echo "  Usage: make <command>"
 	@echo
 
 install:
+	@echo -e "${YELLOW}Installing npm dependencies${NC}"
+	npm install
+
 	@echo -e "${YELLOW}Installing Bower dependencies${NC}"
 	bower install
 
@@ -44,6 +47,7 @@ install:
 clean:
 	@echo -e "${YELLOW}Removing installed dependencies${NC}"
 	rm -rf $(BOWER)
+	rm -rf node_modules
 	rm -rf www
 	rm -rf $(JS_VENDOR)/*
 
@@ -56,5 +60,5 @@ harp:
 	@echo -e "${YELLOW}Installing NodeJS${NC}"
 	sudo apt-get install nodejs npm
 	sudo ln -s /usr/bin/nodejs /usr/bin/node
-	@echo -e "${YELLOW}Installing Bower and Harp{NC}"
-	sudo npm install -g bower harp
+	@echo -e "${YELLOW}Installing Bower, Gulp and Harp{NC}"
+	sudo npm install -g bower gulp harp

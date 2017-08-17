@@ -31,3 +31,10 @@ glue public/assets/sprite_assets/ public/assets/sprites --margin=1 --padding=1 -
 ```
 4. Copy the generated CSS in the `/public/sprites/` directory to appropriate section of `/public/styles/_sprites.less`.
 5. Move generated sprites images in `/public/sprites/` directory to `/public/images/` directory. You will need to change the name of these images to match the current name of the sprites. You may also want to optimize the images before deploying.
+
+### Deploy to gh-pages (staging)
+
+1. Compile static assets: `harp compile`
+2. Deploy to gh-pages: `gulp deploy`
+
+Staging url will be `https://[github username].github.io/pltfm-www/`
