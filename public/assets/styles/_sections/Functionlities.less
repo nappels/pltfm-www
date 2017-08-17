@@ -1,6 +1,6 @@
 #Functionlities {
   padding: 2em 0;
-  .bigPhonePic {
+  #bigPhonePic {
     display: none;
   }
   .functionality {
@@ -35,7 +35,7 @@
 
 
 @media screen and (max-width: 768px) {
-  .swipe {
+  #slider.swipe {
     overflow: hidden;
     visibility: hidden;
     position: relative;
@@ -54,18 +54,36 @@
 
 @media screen and (min-width: 768px) {
   #Functionlities {
-    .bigPhonePic {
+    .bigPhonePicContainer {
+      overflow: hidden;
+    }
+    #bigPhonePic {
+      width: 75%;
+      margin: 0 auto;
       display: block;
       text-align: center;
-      img {
-        display: none;
-        &.active {
-          display: inline-flex;
+      overflow: hidden;
+      visibility: hidden;
+      position: relative;
+      .swipe-wrap {
+        overflow: hidden;
+        position: relative;
+        & > img {
+          float: left;
+          position: relative;
+          overflow: hidden;
+          width: 100%;
         }
       }
     }
     .functionality {
       text-align: left;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: all ease .5s;
+      &.active {
+        opacity: 1;
+      }
       .phonePic{
         display: none;
       }

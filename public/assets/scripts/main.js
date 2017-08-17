@@ -8,21 +8,40 @@ var PLTRFM = {
 
   Clicker: {
     init: function () {
-      this.methods.init();
+      document.querySelector(this.data.selector).classList.add('active');
+      this.data.swipe = Swipe(PLTRFM.Phones.clickEl, PLTRFM.Sliders.options);
+      this.addListeners();
     },
-    state: {
-      index: 0,
+    data: {
+      selector: '.functionality',
+      swipe: null
     },
-    methods: {
-      init: function () {
-        PLTRFM.Phones.clickEl.querySelector('img').className +="active";
+    addListeners: function () {
+      var triggers = document.querySelectorAll(this.data.selector);
+      var triggers_l= triggers.length;
+      for(var i = 0; i < triggers_l; i++) {
+        triggers[i].setAttribute('data-index', i);
+        triggers[i].addEventListener('click', this.handleClick, false);
       }
+    },
+    handleClick: function () {
+      PLTRFM.Clicker.removeActive(index);
+      var index = this.getAttribute('data-index');
+      PLTRFM.Clicker.goToPhone(index);
+      this.classList.add('active');
+    },
+    removeActive: function() {
+      document.querySelector(this.data.selector+'.active').classList.remove('active');
+    },
+    goToPhone: function(index) {
+      this.data.swipe.slide(index, 500);
     }
+
   },
 
   Phones: {
     swipeEl: document.querySelector("#slider"),
-    clickEl: document.querySelector('.bigPhonePic')
+    clickEl: document.querySelector('#bigPhonePic')
   },
 
   Sliders: {

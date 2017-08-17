@@ -1,8 +1,10 @@
 #Functionlities
   .row
-    .col-md-5.bigPhonePic
-        for f, slug in public.sections_copy.Functionalities._data
-          img(src="assets/images/#{slug}.png")
+    .col-md-5.bigPhonePicContainer
+      #bigPhonePic.swipe
+        .swipe-wrap
+          for f, slug in public.sections_copy.Functionalities._data
+            img(src="assets/images/#{slug}.png")
     #slider.swipe.col-xs-12.col-md-7
       .swipe-wrap.row
         for f, slug in public.sections_copy.Functionalities._data
