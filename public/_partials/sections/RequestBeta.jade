@@ -6,10 +6,10 @@
 
     .col-xs-12.col-md-3
     .col-xs-12.col-md-6.inputContainer.center-aligned
-      .row
+      form.row(action="//usemeapp.us7.list-manage.com/subscribe/post?u=5b16e3b63c1bdb0f4a4fa32d8&amp;id=dca37e2e2f" method="post" target="_blank" novalidate)
         .col-xs-12.col-md-8
           .input
-            input(type="text", placeholder="EMAIL ADDRESS")
+            input(required type="email" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="EMAIL ADDRESS")
         .col-xs-12.col-md-4
-          div.button #{public.sections_copy.RequestBeta._data.button_text}
+          input.button(type="submit" value="#{public.sections_copy.RequestBeta._data.button_text}") 
     .col-xs-12.col-md-3
