@@ -10,7 +10,7 @@
         .content
           h2 #{public.sections_copy.Intro._data.intro.title}
           p #{public.sections_copy.Intro._data.intro.text}
-          div.button #{public.sections_copy.Intro._data.button_text}
+          div.button(onclick="PLTFRM.Scroller.toBottom()") #{public.sections_copy.Intro._data.button_text}
           
   .col-xs-12.goal
     h4.accent.center-aligned #{public.sections_copy.Intro._data.goal.title}
