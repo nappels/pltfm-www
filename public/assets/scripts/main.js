@@ -1,15 +1,16 @@
 //
 // Main JavaScript file
 // --------------------------------------------------------
-var PLTRFM = {
+var PLTFRM = {
   init: function () {
-    (window.innerWidth < 768) ? PLTRFM.Sliders.init() : PLTRFM.Clicker.init();
+    (window.innerWidth < 768) ? PLTFRM.Sliders.init() : PLTFRM.Clicker.init();
+    this.Resizer.init();
   },
 
   Clicker: {
     init: function () {
       document.querySelector(this.data.selector).classList.add('active');
-      this.data.swipe = Swipe(PLTRFM.Phones.clickEl, PLTRFM.Sliders.options);
+      this.data.swipe = Swipe(PLTFRM.Phones.clickEl, PLTFRM.Sliders.options);
       this.addListeners();
     },
     data: {
@@ -25,9 +26,9 @@ var PLTRFM = {
       }
     },
     handleClick: function () {
-      PLTRFM.Clicker.removeActive(index);
+      PLTFRM.Clicker.removeActive(index);
       var index = this.getAttribute('data-index');
-      PLTRFM.Clicker.goToPhone(index);
+      PLTFRM.Clicker.goToPhone(index);
       this.classList.add('active');
     },
     removeActive: function() {
@@ -46,7 +47,10 @@ var PLTRFM = {
 
   Sliders: {
     init: function () {
-       Swipe(PLTRFM.Phones.swipeEl, PLTRFM.Sliders.options);
+       this.data.swipe = Swipe(PLTFRM.Phones.swipeEl, PLTFRM.Sliders.options);
+    },
+    data: {
+      swipe: null
     },
     options: {
       startSlide: 0,
@@ -59,7 +63,23 @@ var PLTRFM = {
       transitionEnd: function(index, elem) {}
 
     }
+  },
+
+  Resizer: {
+    init: function () {
+      window.onresize = function () {
+        if(window.innerWidth < 768 && PLTFRM.Sliders.data.swipe === null) {
+          PLTFRM.Clicker.data.swipe.kill();
+          PLTFRM.Clicker.data.swipe = null;
+          PLTFRM.Sliders.init();
+        } else if(window.innerWidth >= 768 && PLTFRM.Clicker.data.swipe === null) {
+          PLTFRM.Sliders.data.swipe.kill();
+          PLTFRM.Sliders.data.swipe = null;
+          PLTFRM.Clicker.init();
+        }
+      }
+    }
   }
 }
 
-PLTRFM.init()
+PLTFRM.init()
