@@ -1,13 +1,12 @@
 #Support {
   .mainImage {
-    background-image: url('../images/Support_image_min.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     width: 120%;
-    margin-left: -11%;
+    margin-left: -10%;
     img {
-      opacity: 0;
+      width: 100%;
+      &.large {
+        display: none;
+      }
     }
   }
   h2 {
@@ -23,7 +22,7 @@
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: @break-md-down) {
   #Support {
     padding: 2em 0;
     .card {
@@ -34,12 +33,22 @@
     }
     .row {
       flex-direction: row-reverse;
+      max-height: 456px;
     }
     .mainImage {
+      img {
+        &.large {
+          display: block;
+          height: 100%;
+          width: auto;
+        }
+        &.min {
+          display: none;
+        }
+      }
       margin-left: 0;
       height: 100%;
       width: auto;
-      background-image: url('../images/support_image.jpg');
     }
 
     .center-aligned {
@@ -59,22 +68,10 @@
   }
 }
 
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (-o-min-device-pixel-ratio: 2/1) {
-  #Support {
-    .mainImage {
-      background-image: url('../images/support_image_min@2x.jpg');
-    }
-  }
-}
-
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px),
-only screen and (-o-min-device-pixel-ratio: 2/1) and (min-width: 768px) {
-  #Support {
-    .mainImage {
-      background-image: url('../images/support_image@2x.jpg');
+@media screen and (min-width: @break-lg-up) {
+  #Support{
+    .row {
+      max-height: 372px;
     }
   }
 }
