@@ -5,6 +5,7 @@ var PLTFRM = {
   init: function () {
     (window.innerWidth < 768) ? PLTFRM.Sliders.init() : PLTFRM.Clicker.init();
     this.Resizer.init();
+    this.Retina.init();
   },
 
   Clicker: {
@@ -79,7 +80,23 @@ var PLTFRM = {
         }
       }
     }
+  },
+
+  Retina: {
+    init: function() {
+      if (window.devicePixelRatio > 1) {
+        var images  = document.querySelectorAll('img');
+        var images_l = images.length;
+        for (var i = 0; i < images_l; i++) {
+          var splitedImages = images[i].src.split(".");
+          if(splitedImages[1] == "jpg" || splitedImages[1] == "png") {
+            images[i].src = splitedImages[0]+"@2x."+splitedImages[1];
+          }
+        }
+      }
+    }
   }
+
 }
 
 PLTFRM.init()
