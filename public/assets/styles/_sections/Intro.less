@@ -37,13 +37,11 @@
   }
 
   .phones {
-    background-image: url('../images/PLTRFM_TwoPhones.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
+    max-height: 400px;
     img {
-      opacity: 0;
-      width: 100%;
+      display: block;
+      height: 100%;
+      margin: 0 auto;
     }
   }
 
@@ -56,27 +54,8 @@
     }
   }
 
-  .logos {
-    text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    width: 100%;
-    img {
-      margin: 1em 0.5em;
-    }
-  }
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1) {
-  #Intro {
-    .phones {
-      background-image: url('../images/PLTRFM_TwoPhones@2x.png');
-    }
-  }
-}
 
 @media screen and (min-width: 768px) {
   #Intro {
@@ -85,6 +64,14 @@
       margin: 0;
       position: relative;
       top: @top-spacing;
+    }
+
+    .phones {
+      max-height: auto;
+      img {
+        height: auto;
+        width: 100%;
+      }
     }
 
     .intro {
@@ -105,12 +92,5 @@
       }
     }
 
-    .logos {
-      width: 80%;
-      justify-content: space-between;
-      img {
-        margin: 1em 0;
-      }
-    }
   }
 }
