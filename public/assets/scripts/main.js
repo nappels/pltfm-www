@@ -77,7 +77,7 @@ var PLTFRM = {
           setTimeout(function() {
             PLTFRM.Sliders.data.swipe.kill();
             PLTFRM.Sliders.data.swipe = null;
-          }, 100);
+          }, 200);
           PLTFRM.Clicker.init();
         }
       }
@@ -99,18 +99,25 @@ var PLTFRM = {
     }
   },
   Scroller: {
-    toBottom: function () {
-      PLTFRM.Scroller.scrollTo(document.body, document.body.offsetHeight - window.innerHeight, 400);
-    },
-    scrollTo :function (element, to, duration) {
-      if (duration <= 0) return;
-      var difference = to - element.scrollTop;
-      var perTick = difference / duration * 10;
+    toSection: function (el, querySelector, duration) {
+      var from = el.offsetTop;
+      var to = document.querySelector(querySelector).offsetTop;
+      var toScroll = (from > to)? from - to : to;
+      var totalPossibleHeight = document.body.offsetHeight - window.innerHeight;
+      if (toScroll > totalPossibleHeight) toScroll = totalPossibleHeight - 2 ;
 
+      var duration = duration || 400;
+      var perTick = toScroll / duration * 10;
+      this.stepScroll(perTick, toScroll)
+    },
+
+    stepScroll: function (step, total)  {
       setTimeout(function() {
-        element.scrollTop = element.scrollTop + perTick;
-        if (element.scrollTop === to) return;
-        PLTFRM.Scroller.scrollTo(element, to, duration - 10);
+        var actualYScroll = window.scrollY;
+        window.scrollTo(0, actualYScroll + step);
+        if(window.scrollY <=  total) {
+          PLTFRM.Scroller.stepScroll(step, total)
+        }
       }, 10);
     }
   }

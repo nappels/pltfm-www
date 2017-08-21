@@ -9,6 +9,9 @@
       }
     }
   }
+  .card .card-container > div {
+    height: 100%;
+  }
   h2 {
     font-weight: normal;
     font-size: 28px;
@@ -31,9 +34,9 @@
       4px -4px 24px rgba(0, 0, 0, 0.1);
       overflow: hidden;
     }
-    .row {
+    .card-container {
       flex-direction: row-reverse;
-      max-height: 456px;
+      height: 456px;
     }
     .mainImage {
       img {
@@ -70,8 +73,8 @@
 
 @media screen and (min-width: @break-lg-up) {
   #Support{
-    .row {
-      max-height: 372px;
+    .card-container {
+      height: 372px;
     }
   }
 }
