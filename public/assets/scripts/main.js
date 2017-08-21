@@ -74,8 +74,10 @@ var PLTFRM = {
           PLTFRM.Clicker.data.swipe = null;
           PLTFRM.Sliders.init();
         } else if(window.innerWidth >= 768 && PLTFRM.Clicker.data.swipe === null) {
-          PLTFRM.Sliders.data.swipe.kill();
-          PLTFRM.Sliders.data.swipe = null;
+          setTimeout(function() {
+            PLTFRM.Sliders.data.swipe.kill();
+            PLTFRM.Sliders.data.swipe = null;
+          }, 100);
           PLTFRM.Clicker.init();
         }
       }
