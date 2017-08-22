@@ -1,0 +1,96 @@
+@top-spacing: 100px;
+
+#introSection{
+  padding-bottom: 2em;
+  #pltfrmLogo {
+    display: flex;
+    margin: 2em auto;
+    justify-content: center;
+    font-weight: 100;
+    font-size: 1.5em;
+    letter-spacing: 5px;
+    img{
+      margin-right: 20px;
+    }
+  }
+  .content {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    h2 {
+      font-size: 33px;
+      font-weight: normal;
+      letter-spacing: -1px;
+      line-height: 50px;
+
+    }
+    p {
+      font-size: 18px;
+      letter-spacing: 0;
+      color: @light-gray;
+      line-height: 30px;
+    }
+
+    .button {
+      margin: 3em 0;
+    }
+  }
+
+  .phones {
+    img {
+      display: block;
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  .goal {
+    margin-top: 1em;
+    p {
+      line-height: 42px;
+      letter-spacing: -.12px;
+      font-size: 28px;
+    }
+  }
+
+}
+
+
+@media screen and (min-width: 768px) {
+  #introSection {
+    #pltfrmLogo {
+      justify-content: flex-start;
+      margin: 0;
+      position: relative;
+      top: @top-spacing;
+    }
+
+    .phones {
+      max-height: auto;
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+
+    .intro {
+      flex-direction: row-reverse;
+      min-height: 700px;
+      .content {
+        margin: 0;
+        position: relative;
+        top: @top-spacing;
+        text-align: left;
+        h2 {
+          font-size: 3em;
+          line-height: 60px;
+        }
+        p {
+          font-size: 1.25em;
+        }
+      }
+    }
+
+  }
+}

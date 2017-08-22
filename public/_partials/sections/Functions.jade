@@ -1,0 +1,20 @@
+#functionsSection
+  .row
+    .col-md-5.big-phone-container
+      #bigPhonePic.swipe
+        .swipe-wrap
+          for f, slug in public.sections_data.Functions._data
+            img(src="assets/images/#{slug}.png" srcset="assets/images/#{slug}@2x.png")
+    #slider.swipe.col-xs-12.col-md-7
+      .swipe-wrap.row
+        for f, slug in public.sections_data.Functions._data
+          .functionality.col-md-12
+            .row
+              .col-xs-12.phone-pic
+                img(src="assets/images/#{slug}.png" srcset="assets/images/#{slug}@2x.png")
+              .col-xs-12.icon.col-md-4
+                .icon-container
+                  img(src="assets/images/#{f.icon}.svg")
+              .container.col-xs-12.col-md-8
+                p.title #{f.title}
+                p.text #{f.text}
