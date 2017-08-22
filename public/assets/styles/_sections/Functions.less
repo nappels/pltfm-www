@@ -21,9 +21,8 @@
       }
     }
     .phone-pic {
-      height: 400px;
       img {
-        height: 100%;
+        width: 70%;
       }
     }
     .title {
@@ -42,17 +41,37 @@
 
 @media screen and (max-width: @break-md-down) {
   #slider.swipe {
-    overflow: hidden;
     visibility: hidden;
     position: relative;
     .swipe-wrap {
-      overflow: hidden;
       position: relative;
       & > .functionality {
-        float: left;
         position: relative;
-        overflow: hidden;
         width: 100%;
+
+        .phone-pic img {
+          transition: all .4s;
+          max-width: 300px;
+        }
+
+        .text {
+          padding: 0 38px;
+        }
+
+        &.previous {
+          .phone-pic {
+            img {
+              margin-right: -52%;
+            }
+          }
+        }
+        &.next {
+          .phone-pic {
+            img {
+              margin-left: -52%;
+            }
+          }
+        }
       }
     }
   }
@@ -86,7 +105,7 @@
       text-align: left;
       cursor: pointer;
       opacity: 0.5;
-      transition: all ease .5s;
+      transition: all .4s;
       &.active {
         opacity: 1;
       }

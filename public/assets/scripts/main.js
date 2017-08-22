@@ -14,10 +14,12 @@ var PLTFRM = {
       this.data.swipe = Swipe(PLTFRM.Phones.clickEl, PLTFRM.Sliders.options);
       this.addListeners();
     },
+
     data: {
       selector: '.functionality',
       swipe: null
     },
+
     addListeners: function () {
       var triggers = document.querySelectorAll(this.data.selector);
       var triggers_l= triggers.length;
@@ -26,15 +28,18 @@ var PLTFRM = {
         triggers[i].addEventListener('click', this.handleClick, false);
       }
     },
+
     handleClick: function () {
       PLTFRM.Clicker.removeActive(index);
       var index = this.getAttribute('data-index');
       PLTFRM.Clicker.goToPhone(index);
       this.classList.add('active');
     },
+
     removeActive: function() {
       document.querySelector(this.data.selector+'.active').classList.remove('active');
     },
+
     goToPhone: function(index) {
       this.data.swipe.slide(index, 500);
     }
@@ -49,20 +54,47 @@ var PLTFRM = {
   Sliders: {
     init: function () {
        this.data.swipe = Swipe(PLTFRM.Phones.swipeEl, PLTFRM.Sliders.options);
+       PLTFRM.Sliders.setSlideClasses(0);
     },
+
     data: {
       swipe: null
     },
+
     options: {
       startSlide: 0,
       speed: 400,
+      auto: 7000,
       draggable: false,
-      continuous: false,
-      disableScroll: false,
+      continuous: true,
+      disableScroll: true,
       stopPropagation: true,
-      callback: function(index, elem, dir) {},
-      transitionEnd: function(index, elem) {}
+      callback: function(index) {
+        PLTFRM.Sliders.setSlideClasses(index);
+      },
+    },
 
+    setSlideClasses: function(index) {
+      var slides = document.querySelectorAll('.functionality');
+      var previousIndex = index - 1;
+      var nextIndex = index + 1;
+      if (previousIndex < 0) previousIndex = slides.length - 1;
+      if (nextIndex >= slides.length) nextIndex = 0;
+
+      for (var i = 0; i < slides.length; i++) {
+        slides[i].classList.remove('next');
+        slides[i].classList.remove('previous');
+        slides[i].classList.remove('active');
+
+        if (slides[i].dataset.index == previousIndex) {
+          // Using == on purpose here as dataset returns a string, and we need to compare a number
+          slides[i].classList.add('previous');
+        } else if (slides[i].dataset.index == nextIndex) {
+          slides[i].classList.add('next');
+        } else {
+          slides[i].classList.add('active');
+        }
+      }
     }
   },
 
@@ -98,6 +130,7 @@ var PLTFRM = {
       }
     }
   },
+
   Scroller: {
     toSection: function (el, querySelector, duration) {
       var from = el.offsetTop;
@@ -121,7 +154,6 @@ var PLTFRM = {
       }, 10);
     }
   }
-
 }
 
 var Utils = {

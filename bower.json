@@ -2,9 +2,10 @@
   "name": "timyo-www",
   "version": "1.0.0",
   "authors": [
-    "Noah Appel <noah.appel@gmail.com>"
+    "Noah Appel <noah.appel@gmail.com>",
+    "Ever Sanchez <everardo.ipn@gmail.com>",
   ],
-  "description": "PLTFM marketing page",
+  "description": "PLTRM marketing page",
   "main": "index.ejs",
   "license": "MIT",
   "homepage": "",

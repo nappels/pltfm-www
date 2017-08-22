@@ -1,5 +1,5 @@
 [![Stories in Ready](https://badge.waffle.io/nappels/pltfm-www.png?label=ready&title=Ready)](https://waffle.io/nappels/pltfm-www?utm_source=badge)
-# pltfm-www
+# pltfrm-www
 Marketing page for PLTFM
 
 ### Setup Development Environment

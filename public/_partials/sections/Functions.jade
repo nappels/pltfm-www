@@ -3,11 +3,11 @@
     .col-md-5.big-phone-container
       #bigPhonePic.swipe
         .swipe-wrap
-          for f, slug in public.sections_copy.Functions._data
+          for f, slug in public.sections_data.Functions._data
             img(src="assets/images/#{slug}.png" srcset="assets/images/#{slug}@2x.png")
     #slider.swipe.col-xs-12.col-md-7
       .swipe-wrap.row
-        for f, slug in public.sections_copy.Functions._data
+        for f, slug in public.sections_data.Functions._data
           .functionality.col-md-12
             .row
               .col-xs-12.phone-pic
