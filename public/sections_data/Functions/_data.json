@@ -10,6 +10,11 @@
     "text": "Start all of your conversations in one place, share files, and make communication between contractors and clients secure and easy."
   },
   "phone_feat_3":{
+    "icon": "checklist",
+    "title": "CHECK-LIST",
+    "text": "Set milestones and tasks, keep freelancers and clients on the same page, and smooth out the project management process."
+  },
+  "phone_feat_4":{
     "icon": "personal",
     "title": "PERSONAL PROFILE",
     "text": "Create a profile and spotlight your skills, showcase your portfolio, and share details about your experience."
