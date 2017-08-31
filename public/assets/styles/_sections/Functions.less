@@ -22,7 +22,7 @@
     }
     .phone-pic {
       img {
-        width: 70%;
+        width: 100%;
       }
     }
     .title {
@@ -32,8 +32,8 @@
     }
     .text {
       color: @light-gray;
-      font-size: 18px;
-      line-height: 30px;
+      font-size: 16px;
+      line-height: 1.9;
     }
   }
 }
@@ -83,7 +83,7 @@
       overflow: hidden;
     }
     #bigPhonePic {
-      width: 75%;
+      width: 100%;
       margin: 0 auto;
       display: block;
       text-align: center;
@@ -111,6 +111,19 @@
       }
       .phone-pic{
         display: none;
+      }
+      .text {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 950px) {
+  #functionsSection {
+    .functionality {
+      .text {
+        font-size: 16px;
       }
     }
   }

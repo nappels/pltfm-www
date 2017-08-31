@@ -1,11 +1,11 @@
 #functionsSection
   .row
-    .col-md-5.big-phone-container
+    .col-md-5.col-lg-4.big-phone-container
       #bigPhonePic.swipe
         .swipe-wrap
           for f, slug in public.sections_data.Functions._data
             img(src="assets/images/#{slug}.png" srcset="assets/images/#{slug}@2x.png")
-    #slider.swipe.col-xs-12.col-md-7
+    #slider.swipe.col-xs-12.col-md-7.col-lg-8
       .swipe-wrap.row
         for f, slug in public.sections_data.Functions._data
           .functionality.col-md-12
