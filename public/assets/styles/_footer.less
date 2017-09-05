@@ -6,10 +6,35 @@ footer {
   padding: 20px 0;
   .align-items(center);
   text-align: center;
+
   .text {
     text-transform: uppercase;
   }
+
   .year {
     color: @light-gray
+  }
+
+  .social-wrapper {
+    a {
+      color: @gray-text;
+      transition: color .2s ease;
+
+      .icon {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 2rem;
+        margin: 0 15px;
+        color: inherit;
+
+        @media screen and (min-width: @break-sm-up) {
+          margin: 0 20px;
+        }
+      }
+
+      &:hover {
+        color: @accent-color
+      }
+    }
   }
 }

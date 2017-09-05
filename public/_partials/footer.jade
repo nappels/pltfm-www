@@ -1,7 +1,14 @@
-footer.row
-  .col-xs-12
-    p.text #{public._data.footer.text}
-    p.year #{public._data.footer.year}
+footer
+  .row
+    .col-xs-12
+      .social-wrapper
+        for account in public._data.footer.social
+          a(href="#{account.href}" target="#{account.icon !== 'email' ? '_blank' : ''}")
+            div(class="icon icon-social-#{account.icon}")
+  .row
+    .col-xs-12
+      p.text #{public._data.footer.text}
+      p.year #{public._data.footer.year}
     
 
 script(src='assets/scripts/swipe.min.js')
