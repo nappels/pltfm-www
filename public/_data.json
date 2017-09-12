@@ -7,9 +7,9 @@
     "year": "© 2017 Pltfrm, Inc",
     "social": [
       { "name": "Email", "icon": "email", "href": "mailto:hello@pltfrm.net" },
-      { "name": "Twitter", "icon": "twitter", "href": "https://twitter.com/getpltfrm" },
-      { "name": "Instagram", "icon": "instagram", "href": "https://www.instagram.com/getpltfrm/" },
-      { "name": "Facebook", "icon": "facebook", "href": "https://www.facebook.com/getpltfrm" }
+      { "name": "Twitter", "icon": "twitter", "href": "https://twitter.com/pltfrmhq" },
+      { "name": "Instagram", "icon": "instagram", "href": "https://www.instagram.com/pltfrmhq/" },
+      { "name": "Facebook", "icon": "facebook", "href": "https://www.facebook.com/pltfrmhq" }
     ]
   }
 }
